@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!--here we learn how to dependency injection (DI) using setter injection and collection data type-->
+   <bean name="st1" class="com.spring.anand.collection.Student">
+   <property name="name" value="anand"/>
+   
+   <property name="address">
+       <list>
+       <value>india</value>
+       <value>usa</value>
+       </list>
+   </property>
+   <property name="phone">
+      <set>
+      <value>+91933609228</value>
+      <value>+91939666444</value>
+      </set>
+   </property>
+   <property name="cources">
+     <map>
+     <entry key="cource1" value="computer"/>
+     <entry key="cource2" value="spring"/>
+     </map>
+   </property>
+   </bean>
+    
+</beans>

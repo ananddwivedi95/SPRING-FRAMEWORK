@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean name="javac" class="com.spring.anand.ineuron.JavaCources"></bean>
+    <bean name="sql" class="com.spring.anand.ineuron.SqlCources"></bean>
+    <bean name="python" class="com.spring.anand.ineuron.PythonCources" lazy-init="true"></bean>
+    <bean name="cource" class="com.spring.anand.ineuron.CourcesSelection">
+    <property name="cource" ref="javac"></property>
+    </bean>
+
+</beans>
