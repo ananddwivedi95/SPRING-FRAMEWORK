@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!--Configuring Address class-->
+    <bean id="add" class="Company.Address"><!--id = like the name of object and work as the refrence name and the name= fully qulified class-->
+    <constructor-arg value="prayagraj"/>
+    <constructor-arg value="UP"/>
+    <constructor-arg value="129595"/>
+    </bean>
+    
+    <!--Configuring Employee class-->
+    <bean id="emp" class="Company.Employee">
+    <constructor-arg value="anand"/>
+    <constructor-arg value="mahadev95"/>
+    <constructor-arg ref="add"/>
+    </bean>
+    <bean id="emp1" class="Company.Employee">
+    <constructor-arg value="raj Dwivedi"/>
+    <constructor-arg value="mahadev5Anand"/>
+    <constructor-arg ref="add"/>
+    </bean>
+
+</beans>

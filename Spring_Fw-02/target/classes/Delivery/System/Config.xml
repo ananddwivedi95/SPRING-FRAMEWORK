@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- by using Construction Injection be Achive DI-->
+    <bean id="product" class="Delivery.System.ProductDetails">
+    <constructor-arg value="parle-G"/>
+    <constructor-arg value="Cookie/Bekear"/>
+    <constructor-arg value="feb2024"/>
+    <constructor-arg  value="oct2080"/>
+    <constructor-arg value="40.00"/>
+    </bean>
+    
+    <!-- by using Setter Injection Be Achive DI-->
+    <bean id="deliveryAddress" class="Delivery.System.DeliveryAddress">
+    <property name="dAddress" value="prayagraj" />
+    <property name="deliveryFees" value="8000000"/>
+    <property name="expectDate" value="12feb2024"/>
+    <property name="product" ref="product"/>
+    </bean>
+</beans>
