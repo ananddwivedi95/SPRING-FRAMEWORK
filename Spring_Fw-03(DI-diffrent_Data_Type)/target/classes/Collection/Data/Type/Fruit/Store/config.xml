@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<bean id="fruit" class="Collection.Data.Type.Fruit.Store.Fruit">
+ <constructor-arg>
+  <set>
+     <value>cashew</value>
+     <value>almond</value>
+     <value>akrod</value>
+     <value>kismish</value>
+  </set>
+ </constructor-arg>
+ <constructor-arg>
+    <list>
+       <value>Apple</value>
+       <value>orange</value>
+       <value>banana</value>
+    </list>
+ </constructor-arg>
+</bean>
+<bean id="price" class="Collection.Data.Type.Fruit.Store.FruitPrice">
+        <constructor-arg>
+            <map>
+                <entry key="cashew" value="500"/>
+                <entry key="almond" value="700"/>
+                <entry key="akrod" value="900"/>
+                <entry key="kismish" value="600"/>
+                <entry key="Apple" value="150"/>
+                <entry key="orange" value="100"/>
+                <entry key="banana" value="50"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg ref="fruit"/>
+    </bean>
+</beans>

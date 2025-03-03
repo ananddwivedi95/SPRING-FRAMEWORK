@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<bean id="addr" class="com.UserDefindClassDataType.StudentDetails.Address">
+<property name="city" value="prayagraj"></property>
+<property name="Country" value="India"></property>
+<property name="pincode" value="7800012"></property>
+<property name="state" value="UP"></property>
+</bean>
+
+<bean id="stud1" class="com.UserDefindClassDataType.StudentDetails.StudentDetails">
+<property name="address" ref="addr"></property>
+<property name="cource" value="spring springboot"></property>
+<property name="id" value="microsift87"></property>
+<property name="name" value="Anand Dwivedi"></property>
+<property name="phoneNumber" value="9336644492"></property>
+</bean>
+
+</beans>
