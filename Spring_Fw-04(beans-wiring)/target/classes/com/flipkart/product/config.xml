@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<bean id="product" class="com.flipkart.product.Product">
+    <constructor-arg value="12120"/>
+    <constructor-arg value="hp"/>
+
+</bean>
+<bean id="order" class="com.flipkart.order.Order">
+     <property name="orderId" value="1234"/>
+     <property name="orderValue" value="80000.00"/>
+     <property name="product" ref="product"/>
+</bean>
+<bean id="orderManagement" class="com.flipkart.order.OrderManagement">
+     <property name="noOfOrder" value="1245"/>
+     <property name="totalAmount" value="30000000"/>
+     <property name="order" ref="order"/> 
+</bean>
+</beans>
