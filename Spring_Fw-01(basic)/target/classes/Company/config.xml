@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!--Configuring Address class-->
+    <bean id="add" class="Company.Address"><!--id = like the name of object and work as the refrence name and the name= fully qulified class-->
+    <constructor-arg value="prayagraj"/>
+    <constructor-arg value="UP"/>
+    <constructor-arg value="129595"/>
+    </bean>
+    
+    <!--Configuring Employee class-->
+    <bean id="emp" class="Company.Employee">
+    <constructor-arg value="anand"/>
+    <constructor-arg value="mahadev95"/>
+    <constructor-arg ref="add"/>
+    </bean>
+    <!--make a one more object emp1 for same class Address class that object i have already created above-->
+    <!-- if we configured multiple time same class with diffrent uique id (object name) that  we already configured above then what will be  happend - then the one more object will be created by spring ioc with provided unique id(object) "as core java here we also create multiple object of same class but object name(id) refrenced id name should be diffrent"-->
+    <bean id="emp1" class="Company.Employee">
+    <constructor-arg value="raj Dwivedi"/>
+    <constructor-arg value="mahadev5Anand"/>
+    <constructor-arg ref="add"/>
+    </bean>
+
+</beans>
