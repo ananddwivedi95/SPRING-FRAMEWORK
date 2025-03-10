@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="product1" class="com.flipkart.product.Product">
+    <property name="productName" value="almond"/>
+    <property name="productPrice" value="12145"/>
+    <property name="productType" value="solid"/>
+    </bean>
+    <!--</bean>
+     <bean id="product2" class="com.flipkart.product.Product">
+    <property name="productName" value="almond"/>
+    <property name="productPrice" value="12145"/>
+    <property name="productType" value="solid"/>
+    
+    </bean>-->
+    
+   <!-- <bean id="order" class="com.flipkart.order.Order" autowire="no">-->  <!-- autowiring by its 1st type that is no autowiring i.e autowire="no" it means by default springframework support no autowire means not any autowire like concept are apply here means there is not any autowiring-->
+    <!--<bean id="order" class="com.flipkart.order.Order" autowire="byName">--> <!-- autowiring but byName in this type of autowiring we are automatically inject dependency by its name if same variable name match the bean in the container then it will inject the dependency otherwise it will give NULL-->
+    <bean id="order" class="com.flipkart.order.Order" autowire="byType"> <!-- here we try to achive byType its firstly go the respective bean class then identify the data type (class type) and respective match where that class type bean is decleare and if forund then it will inject the dependency but if same class type decleare multiple bean then it will confused and give unambigious error-->
+    <property name="orderName" value="raj dwivedi"/>
+    <property name="orderAddress" value="prayagraj"/>
+    <!--<property name="product" ref="product"/>-->
+    </bean>
+    
+    <bean id="ordermanagment" class="com.flipkart.order.OrderManagment">
+    <property name="orderDate" value="12feb2020"/>
+    <property name="orderPrice" value="650000"/>
+    <property name="order" ref="order"/>
+    </bean>
+</beans>
