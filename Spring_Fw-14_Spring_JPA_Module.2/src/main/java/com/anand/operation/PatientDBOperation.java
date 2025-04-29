@@ -51,9 +51,14 @@ public class PatientDBOperation {
 		List<Patient> p=(List<Patient>) prepo.findByAgeAndGender(age,gender);
 		return p;
 	}
-	
+	// find or select all data present in the database by using finadAllPatient method use 
 	public List<Patient> findAllPatient()
 	{
 		return prepo.findAll();
+	}
+	//delete operation perform by delete() on the basis of PrimaryKey
+	public void deleteData(int patientId)
+	{
+		prepo.deleteById(patientId);
 	}
 }

@@ -78,17 +78,24 @@ public class MainApp {
 	System.out.println("************************************************");
 
 	
+	//select operation happen bases on more then one argument 
 	 List<Patient> p5=(List<Patient>) pdbop.getPatientWithAgeandGender("18","M");
 	 System.out.println(p5);
-		System.out.println("************************************************");
+	 System.out.println("************************************************");
 
 	 
+	 //select operation on the basis of all data select 
 	List<Patient> p6=pdbop.findAllPatient();
 	for(Patient pp:p6)
 	{
 		System.out.println(pp);
 	}
-	 System.out.println("************************************************");
+	System.out.println("************************************************");
+
+	
+	 //delete operation happen with the basis of Primary key
+     pdbop.deleteData(11);
+ 	 System.out.println("************************************************");
 
    }
 }
