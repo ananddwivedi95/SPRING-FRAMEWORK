@@ -1,0 +1,5 @@
+com\swiggy\service\UserService.class
+com\swiggy\initilizer\UserConfig.class
+com\swiggy\controller\UserController.class
+com\swiggy\initilizer\UserInitilizer.class
+com\swiggy\request\UserRegistrationRequest.class
